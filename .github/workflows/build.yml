@@ -1,0 +1,38 @@
+name: Build and Package Scroll Reverse
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  release:
+    types: [ "created" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile and Package App
+      run: |
+        chmod +x build.sh
+        ./build.sh
+        # Create a distributable zip archive
+        zip -r ScrollReverse.zip ScrollReverse.app
+
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ScrollReverse-macOS-arm64
+        path: ScrollReverse.zip
+
+    - name: Upload to Release (if tag/release created)
+      if: github.event_name == 'release'
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ScrollReverse.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
