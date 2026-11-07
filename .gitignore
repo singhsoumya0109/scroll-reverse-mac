@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Build Artifacts
+*.app
+*.dSYM
+*.o
+*.obj
+build/
+DerivedData/
+
+# Temporary / Scratch files
+*.swp
+*~
+*.bak
