@@ -1,5 +1,9 @@
 # Scroll Reverse for macOS (Apple Silicon M4)
 
+[![Build and Package Scroll Reverse](https://github.com/singhsoumya0109/scroll-reverse-mac/actions/workflows/build.yml/badge.svg)](https://github.com/singhsoumya0109/scroll-reverse-mac/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![macOS Apple Silicon](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon)-black.svg)](https://apple.com)
+
 A native, ultra-lightweight macOS Menu Bar application (~94 KB, 0.0% CPU) designed specifically to **invert the external mouse scroll wheel direction while keeping macOS "Natural Scrolling" untouched for your trackpad**.
 
 ---
